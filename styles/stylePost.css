@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* Configurações Gerais */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin: 10px;
+}
+
+header {
+  height: 100px;
+  position: sticky;
+  display: grid;
+  grid-template-columns: 300px 840px;
+  align-items: center;
+}
+
+article {
+  display: flex;
+}
+
+div {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+/* Configurações Header */
+.logo a {
+  padding-inline-start: 40px;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+#nav-header ul {
+  float: right;
+}
+
+#nav-header ul li {
+  float: left;
+}
+
+#nav-header ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 0.85em 1.5em;
+  color: black;
+}
+
+#nav-header ul li a.clicked {
+  color: gray;
+}
+
+#nav-header ul li a.clicked::before,
+#nav-header ul li a.clicked::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: calc(100% - 40px);
+  height: 2px;
+  background-color: gray;
+  transform: translateX(-50%);
+}
+
+#nav-header ul li a.clicked::before {
+  margin-left: -10px;
+}
+
+#nav-header ul li a.clicked::after {
+  margin-left: 10px;
+}
+
+#nav-header ul li a .nav-text {
+  transition: 0.2s all ease-in-out;
+}
+
+#nav-header ul li a .nav-text:hover {
+  color: black;
+}
+
+#nav-header ul li a:not(.clicked) .nav-text:hover {
+  color: gray;
+}
+
+#nav-header ul li a:not(.clicked) .nav-text:hover::before,
+#nav-header ul li a:not(.clicked) .nav-text:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: calc(100% - 40px);
+  height: 2px;
+  background-color: gray;
+  transform: translateX(-50%);
+}
+
+/*Configurações Main*/
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+#main-article {
+  width: 700px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#main-article .title {
+  font-size: 2em;
+}
+
+#main-img {
+  border: 3px solid gray;
+  margin-top: 15px;
+}
+
+.sub-article {
+  font-size: 0.9em;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#articles-container {
+  width: 40%;
+}
+
+/*Configuraçoes Article Section*/
+.three-collums {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .three-collums li {
+    padding: 10px;
+    text-align: center;
+  }
+
+/* Configurações Footer */
+#footer-container {
+  width: 100%;
+  background-color: black;
+}
+
+footer {
+  background: url(img/faixaFooter.png) repeat-x;
+  display: flex;
+  height: 350px;
+  text-align: center;
+  color: white;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+footer p {
+  margin-top: 30px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+footer p#rights {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+footer ul {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+footer ul li {
+  padding: 20px;
+  display: inline;
+  align-items: center;
+}
+
+footer ul li a {
+  font-size: 0.9em;
+  color: white;
+  text-decoration: underline;
+  transition: 0.1s all ease-in-out;
+}
+
+footer ul li:hover a {
+  color: burlywood;
+  cursor: pointer;
+}
