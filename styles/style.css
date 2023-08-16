@@ -25,7 +25,6 @@ h2 {
 
 header {
   height: 100px;
-  position: sticky;
   display: grid;
   grid-template-columns: 300px 840px;
   align-items: center;
@@ -183,7 +182,7 @@ div {
 }
 
 footer {
-  background: url(img/faixaFooter.png) repeat-x;
+  background: url(../img/faixaFooter.png) repeat-x top;
   display: flex;
   height: 350px;
   text-align: center;
