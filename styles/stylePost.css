@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
 
 /* Configurações Gerais */
 * {
@@ -35,15 +36,19 @@ article {
 }
 
 div {
-  width: 1140px;
+  width: 700px;
   margin: 0 auto;
 }
 
 /* Configurações Header */
 .logo a {
-  padding-inline-start: 40px;
   font-size: 2em;
   text-transform: uppercase;
+  font-family: "EB Garamond", serif;
+}
+
+.header-container {
+  width: 1140px;
 }
 
 #nav-header ul {
@@ -111,8 +116,8 @@ div {
 
 /*Configurações Main*/
 .main-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #main-article {
@@ -145,18 +150,17 @@ div {
 
 /*Configurações Post Section*/
 
-#post-container{
+#post-container {
   margin-top: 30px;
-  width: 700px;
 }
 
-#post{
+#post {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.person-icon{
+.person-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -165,14 +169,14 @@ div {
   float: left;
 }
 
-#post p.person-name{
+#post p.person-name {
   padding-top: 0.5em;
   margin-left: 4.9em;
   padding-bottom: 0;
 }
 
-.date{
-  margin-left: .7em;
+.date {
+  margin-left: 0.7em;
 }
 
 #post header {
@@ -183,23 +187,25 @@ div {
 
 #post p {
   padding-bottom: 10px;
+  text-align: justify;
 }
 
 header .post-div {
   width: 350px;
 }
 
-.icone-facebook,.icone-twitter {
+.icone-facebook,
+.icone-twitter {
   width: 30px;
   height: 30px;
 }
 
-#nav-post{
+#nav-post {
   display: flex;
   flex-direction: row-reverse;
 }
 
-#nav-post ul li{
+#nav-post ul li {
   display: inline;
 }
 
@@ -222,24 +228,80 @@ header .post-div {
   margin-bottom: 50px;
 }
 
-#about-me span{
+#about-me span {
   display: block;
-  margin-left: 5em;
+  padding-top: 0.5em;
+  margin-left: 6em;
+  font-size: 0.9em;
 }
 
 /*Configuraçoes Article Section*/
 .three-collums {
-    margin-bottom: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .three-collums li {
-    padding: 10px;
-    text-align: center;
-  }
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.three-collums li {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.2s ease-in-out;
+}
+
+.three-collums li:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Configurações newsletter */
+#newsletter-container {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#newsletter-container form {
+  border: 1px solid black;
+  border-top: 10px solid black;
+  text-align: center;
+  padding: 25px;
+}
+
+#newsletter-container form label {
+  font-size: 2rem;
+}
+
+#newsletter-container #submit {
+  width: 450px;
+  margin-top: 1em;
+}
+
+#newsletter-container form input {
+  padding: 1em;
+  border: 1px solid black;
+  width: 250px;
+}
+
+#newsletter-container form p {
+  font-size: 0.9em;
+}
+
+#newsletter-container form button {
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.1em;
+  border: none;
+  margin-left: -4px;
+}
+
+#newsletter-container form button:hover {
+  background-color: rgb(40, 40, 40);
+}
 
 /* Configurações Footer */
 #footer-container {
@@ -292,3 +354,89 @@ footer ul li:hover a {
   color: burlywood;
   cursor: pointer;
 }
+
+/*Media query*/
+
+@media (max-width: 700px) {
+  div {
+    width: auto;
+  }
+
+  header {
+    width: auto;
+  }
+
+  footer {
+    height: 300px;
+  }
+
+  #main-article a {
+    width: 90%;
+  }
+
+  #main-article a img {
+    width: 100%;
+  }
+
+  #articles-container {
+    width: 100%;
+  }
+  
+  #post-container {
+    width: 100%;  
+  }
+
+  #post-container header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-post{
+    justify-content: center;
+  }
+
+  #nav-post ul {
+    clear: both;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #nav-post ul li button{
+    display: inline;
+    padding: 0 15vw;
+  }
+
+  #post p , #post small {
+    width: 80%;
+  }
+
+  .three-collums {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .three-collums li {
+    margin-bottom: 25px;
+  }
+
+  .three-collums li a img {
+    width: 85%;
+  }
+
+  #newsletter-container form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  #newsletter-container form input {
+    width: 200px;
+  }
+
+  footer p {
+    margin: 0 15px;
+  }
+}
+

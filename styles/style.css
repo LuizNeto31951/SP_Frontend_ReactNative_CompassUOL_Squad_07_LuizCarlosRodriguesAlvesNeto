@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
 
 /* Configurações Gerais */
 * {
@@ -35,15 +36,19 @@ article {
 }
 
 div {
-  width: 1140px;
+  width: 700px;
   margin: 0 auto;
 }
 
 /* Configurações Header */
+.header-container {
+  width: 1140px;
+}
+
 .logo a {
-  padding-inline-start: 40px;
   font-size: 2em;
   text-transform: uppercase;
+  font-family: "EB Garamond", serif;
 }
 
 #nav-header ul {
@@ -116,7 +121,6 @@ div {
 }
 
 #main-article {
-  width: 700px;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 30px;
@@ -142,7 +146,7 @@ div {
   padding-bottom: 15px;
 }
 
-.instagram-media{
+.instagram-media {
   margin-top: 30px;
 }
 
@@ -225,4 +229,49 @@ footer ul li a {
 footer ul li:hover a {
   color: burlywood;
   cursor: pointer;
+}
+
+/*Media query*/
+
+@media (max-width: 700px) {
+  div {
+    width: auto;
+  }
+
+  header {
+    width: auto;
+  }
+
+  footer {
+    height: 300px;
+  }
+
+  #main-article a {
+    width: 90%;
+  }
+
+  #main-article a img {
+    width: 100%;
+  }
+
+  #articles-container {
+    width: 100%;
+  }
+
+  .two-collums {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .two-collums li {
+    margin-bottom: 25px;
+  }
+
+  .two-collums li a img {
+    width: 85%;
+  }
+
+  footer p {
+    margin: 0 15px;
+  }
 }
