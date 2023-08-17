@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordic Rose</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="./script/script.js"></script>
   </head>
   <body>
     <div class="header-container">
       <!--Incio container do headerr-->
       <header>
-        <div class="logo">
-          <a href="index.html">Nordic Rose</a>
-        </div>
         <nav id="nav-header">
-          <ul>
+          <div class="logo">
+            <a href="index.html">Nordic Rose</a>
+          </div>
+          <ul class="nav-menu">
             <li>
               <a id="blog" class="clicked" href="index.html"
                 ><span class="nav-text">Blog</span></a
@@ -36,6 +37,13 @@
               >
             </li>
           </ul>
+          <div class="flex">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
         </nav>
       </header>
     </div>
