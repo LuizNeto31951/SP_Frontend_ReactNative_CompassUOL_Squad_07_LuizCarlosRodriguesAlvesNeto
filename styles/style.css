@@ -269,8 +269,8 @@ footer ul li:hover a {
 
 @media (max-width: 900px) {
   div {
-    width: auto;
-  }
+    width: 90%;
+  } 
 
   header {
     background-color: whitesmoke;
@@ -351,7 +351,7 @@ footer ul li:hover a {
   }
 
   .nav-text.active {
-    animation: delay 1s forwards;
+    animation: delay 2s forwards;
   }
 
   @keyframes delay {
