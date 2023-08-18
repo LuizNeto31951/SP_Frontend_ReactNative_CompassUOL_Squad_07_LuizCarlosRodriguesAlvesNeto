@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ul {
@@ -42,9 +43,13 @@ div {
   width: 100vw;
 }
 
+.flex {
+  justify-content: flex-end;
+}
+
 .logo a {
   display: inline-block;
-  width: 40vh;
+  width: 30vh;
   font-size: 2em;
   text-transform: uppercase;
   font-family: "EB Garamond", serif;
@@ -125,6 +130,7 @@ div {
 }
 
 .hamburger {
+  width: 10%;
   align-self: flex-end;
   margin: 0;
   display: none;
@@ -161,7 +167,7 @@ div {
 
 #main-img {
   border: 3px solid gray;
-  margin-top: 15px;
+  margin: 15px;
 }
 
 .sub-article {
@@ -191,7 +197,6 @@ div {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  object-fit: cover;
   display: inline;
   float: left;
 }
@@ -206,19 +211,9 @@ div {
   margin-left: 0.7em;
 }
 
-#post header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 30px;
-}
-
 #post p {
   padding-bottom: 10px;
   text-align: justify;
-}
-
-header .post-div {
-  width: 350px;
 }
 
 .icone-facebook,
@@ -230,7 +225,10 @@ header .post-div {
 #nav-post {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse;  
+  position: relative;
+  top: -60px;
+
 }
 
 #nav-post ul li {
@@ -238,8 +236,6 @@ header .post-div {
 }
 
 #nav-post ul li button {
-  border: none;
-  margin-left: 10px;
   border-radius: 8px;
   padding: 3px 25px;
   font-size: 16px;
@@ -284,9 +280,78 @@ header .post-div {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+/**/
+
+.comment-container {
+  width: 100%;
+  border: 1px solid gray;
+  margin: 50px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 80px;
+  box-shadow: 0 0 2px 1px gray;
+}
+
+.comment-container p {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.comment-form input, .comment-form textarea{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  color: #777;
+}
+
+.comment-form button {
+  margin: 10px 0;
+  border: none;
+  background-color: #d0d0d0;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  color: #444;
+  transition: .2s ease-in-out;
+}
+
+.comment-form button:hover {
+  color: white;
+  background-color: #444;
+}
+
+.comment-card .person-icon {
+  transform: scale(.9);
+}
+
+.comment-card {
+  display: grid;
+  grid-template-columns: 10% auto;
+  border-bottom: 1px solid gray ;
+  padding: 15px 0;
+  align-items: center;
+}
+
+.comment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-info .nickname {
+  font-size: .9em;
+}
+
+.comment-info .comment {
+  margin: 5px 0;
+}
+
 /* Configurações newsletter */
 #newsletter-container {
-  width: 450px;
+  width: 100;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -304,14 +369,12 @@ header .post-div {
 }
 
 #newsletter-container #submit {
-  width: 450px;
   margin-top: 1em;
 }
 
 #newsletter-container form input {
-  padding: 1em;
+  padding: 1.03em;
   border: 1px solid black;
-  width: 250px;
 }
 
 #newsletter-container form p {
@@ -386,14 +449,20 @@ footer ul li:hover a {
 
 /*Media query*/
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   div {
-    width: auto;
+    width: 90%;
+  }
+  
+  #main-article .title {
+    text-align: justify;
+    font-size: 1.3em;
   }
 
   header#main {
     background-color: whitesmoke;
     position: fixed;
+    z-index: 100;
   }
 
   footer {
@@ -439,23 +508,39 @@ footer ul li:hover a {
 
   .nav-menu {
     position: fixed;
-    left: -100%;
-    top: 70px;
+    left: 0;
+    top: -100%;
     gap: 0;
     flex-direction: column;
     background-color: whitesmoke;
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
+    z-index: -1;
   }
 
   .nav-menu.active {
-    left: 0;
+    top: 60px;
   }
 
-  .nav-menu li {
-    margin: 16px 0;
+  .nav-menu li{
+    margin: 7px 0 ;
+  }
+
+  .nav-text {
+    opacity: 0;
     border-bottom: 1px solid gray;
+    
+  }
+
+  .nav-text.active {
+    animation: delay 1s forwards;
+  }
+
+  @keyframes delay {
+    to {
+      opacity: 1;
+    }
   }
 
   .nav-menu li a.clicked::before,
@@ -477,6 +562,7 @@ footer ul li:hover a {
 
   #nav-post{
     justify-content: center;
+    top: 0;
   }
 
   #nav-post ul {
@@ -493,8 +579,22 @@ footer ul li:hover a {
     padding: 0 15vw;
   }
 
+  .post-div .person-icon, .post-div .person-name, .post-div .date {
+    position: relative;
+    left: 5vw;
+  }
+
   #post p , #post small {
     width: 80%;
+  }
+
+  #about-me img.person-icon{
+    position: relative;
+    left: 2vw;
+  }
+
+  #about-me span {
+    padding: 0;
   }
 
   .three-collums {
@@ -508,6 +608,27 @@ footer ul li:hover a {
 
   .three-collums li a img {
     width: 85%;
+  }
+
+  .three-collums li:hover {
+    transform: unset;
+  }
+
+  .comment-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .comment-form button {
+    width: 100%;
+  }
+
+  .comment-card{
+    width: 100%;
+    grid-template-columns: 20% auto;
+    box-shadow: 0 0 3px 0;
+    margin: 6px;
+    justify-items: end;
   }
 
   #newsletter-container form{
@@ -524,3 +645,4 @@ footer ul li:hover a {
     margin: 0 15px;
   }
 }
+

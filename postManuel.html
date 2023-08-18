@@ -134,8 +134,8 @@
             min-width: 326px;
             padding: 0;
             width: 99.375%;
-            width: -webkit-calc(100% - 2px);
-            width: calc(100% - 2px);
+            width: -webkit-calc(100% - 20%);
+            width: calc(100% - 20%);
           "
         >
           <div style="padding: 16px">
@@ -177,6 +177,34 @@
     </div>
     <!--Fim post-container-->
     <hr style="clear: both" />
+    <div id="comment-section">
+      <div class="comment-container">
+        <p>Deixe um comentario!</p>
+        <form class="comment-form">
+          <input type="text" name="name" id="name" placeholder="Seu nome: " />
+          <textarea
+            name="comment-text"
+            id="comment-text"
+            rows="10"
+            placeholder="Seu comentario: "
+          ></textarea>
+          <button type="button" class="submit">Enviar!</button>
+        </form>
+      </div>
+      <h2 style="text-align: center">Comentarios</h2>
+      <div class="create-comment">
+        <div class="comment-card">
+          <img class="person-icon" src="./img/eu.jpg" />
+          <div class="comment-info">
+            <p class="nickname">user</p>
+            <p class="comment">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              ut dolor ratione!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Inicio container articles-container-->
     <div id="articles-container">
       <h2 style="text-align: center">Leia também</h2>
