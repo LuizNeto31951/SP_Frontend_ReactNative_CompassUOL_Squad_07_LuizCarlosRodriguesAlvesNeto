@@ -192,7 +192,7 @@ div {
 .two-collums {
   margin-bottom: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   align-items: center;
   justify-content: center;
 }
@@ -206,10 +206,14 @@ div {
   transition: 0.1s all ease-in-out;
 }
 
-.two-collums li a:hover h3#primeiro,
-.two-collums li a:hover h3#segundo,
-.two-collums li a:hover h3#terceiro,
-.two-collums li a:hover h3#quarto {
+.two-collums li a p {
+  font-size: .9em;
+}
+
+.two-collums li:hover h3,
+.two-collums li:hover h3,
+.two-collums li:hover h3,
+.two-collums li:hover h3{
   transform: scale(1.1);
 }
 
@@ -368,7 +372,8 @@ footer ul li:hover a {
   }
   .two-collums {
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 70%;
+    margin-left: 15%;
   }
 
   .two-collums li {
