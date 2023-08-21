@@ -4,6 +4,7 @@ const postId = new URLSearchParams(window.location.search).get("id");
 fetch(`https://dummyjson.com/products/${postId}`)
     .then((res) => res.json())
     .then((json) => {
+    document.getElementById("site-title").textContent = json.title;
     document.getElementById("post-title").textContent = json.title;
     document.getElementById("main-img").src = json.thumbnail;
     document.getElementById("post-description").textContent = json.description;
